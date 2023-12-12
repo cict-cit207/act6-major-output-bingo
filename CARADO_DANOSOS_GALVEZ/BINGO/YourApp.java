@@ -5,14 +5,14 @@ import java.util.List;
 
 public class YourApp {
 
-    public static void initGUI(){
-        Dimension dimension = new Dimension(400,200);
-        GridLayout gridLayout = new GridLayout(0,1);
+    public static void initGUI() {
+        Dimension dimension = new Dimension(400, 200);
+        GridLayout gridLayout = new GridLayout(0, 1);
         JFrame jFrame = new JFrame("BINGO Starter");
 
         // Sample set for B numbers in BINGO app.
         // This should be randomized with no repetitions.
-        int[] BSet = {1,2,3,4,5};
+        int[] BSet = { 1, 2, 3, 4, 5 };
         // Container for the B buttons
         List<JButton> BSetButtons = new ArrayList<>();
 
@@ -36,7 +36,6 @@ public class YourApp {
         for (JButton bSetButton : BSetButtons) {
             jFrame.getContentPane().add(bSetButton);
         }
-
 
         jFrame.setVisible(true);
 
