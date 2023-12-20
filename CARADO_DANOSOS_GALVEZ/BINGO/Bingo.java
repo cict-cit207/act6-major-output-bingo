@@ -31,19 +31,24 @@ public class Bingo {
 
     public boolean checkStatus() {
         boolean[] columns = { checkIfAllTrue(BBool), checkIfAllTrue(IBool), checkIfAllTrue(NBool),
-                checkIfAllTrue(GBool),
-                checkIfAllTrue(OBool) };
+                checkIfAllTrue(GBool), checkIfAllTrue(OBool) };
 
-        for (boolean row : columns) {
-            if (row) {
+        for (boolean col : columns) {
+            if (col) {
                 return true;
-            } else {
-                continue;
             }
         }
 
-        boolean[] rows = { false, false, false, false, false };
+        boolean[] mainDiagonal = { BBool[0], IBool[1], NBool[2], GBool[3], OBool[4] };
+        boolean[] reverseDiagonal = { BBool[4], IBool[3], NBool[2], GBool[1], OBool[0] };
+
+        if (checkIfAllTrue(mainDiagonal) || checkIfAllTrue(reverseDiagonal)) {
+            return true;
+        }
+
         for (int i = 0; i < 5; i++) {
+            boolean[] rows = new boolean[5];
+
             rows[0] = BBool[i];
             rows[1] = IBool[i];
 
@@ -55,6 +60,7 @@ public class Bingo {
 
             rows[3] = GBool[i];
             rows[4] = OBool[i];
+
             if (checkIfAllTrue(rows)) {
                 return true;
             }
@@ -64,32 +70,33 @@ public class Bingo {
     }
 
     public void update_card(char letter, int number) {
+        boolean newVal = true;
         for (int i = 0; i < 5; ++i) {
 
             switch (letter) {
                 case 'B':
                     if (number == BSetNums[i]) {
-                        BBool[i] = true;
+                        BBool[i] = newVal;
                     }
                     break;
                 case 'I':
                     if (number == ISetNums[i]) {
-                        IBool[i] = true;
+                        IBool[i] = newVal;
                     }
                     break;
                 case 'N':
                     if (number == NSetNums[i]) {
-                        NBool[i] = true;
+                        NBool[i] = newVal;
                     }
                     break;
                 case 'G':
                     if (number == GSetNums[i]) {
-                        GBool[i] = true;
+                        GBool[i] = newVal;
                     }
                     break;
                 case 'O':
                     if (number == OSetNums[i]) {
-                        OBool[i] = true;
+                        OBool[i] = newVal;
                     }
                     break;
             }
@@ -138,10 +145,11 @@ public class Bingo {
         jFrame.setVisible(v);
     }
 
-    public void initGUI() {
+    public void initGUI(int cardnum) {
 
         Dimension dimension = new Dimension(350, 500);
         GridLayout gridLayout = new GridLayout(0, 5);
+        jFrame.setTitle(("Bingo Card: #" + cardnum));
 
         jFrame.setSize(dimension);
         jFrame.setLayout(gridLayout);
@@ -174,15 +182,15 @@ public class Bingo {
 
             if (i == 2) {
                 NButton = new JButton("FREE");
+                NButton.setBackground(Color.orange);
             } else {
                 NButton = new JButton(String.valueOf(NSetNums[i]));
                 NButton.addActionListener(e -> {
                     NButton.setEnabled(false);
                     NButton.setBackground(Color.ORANGE);
                 });
+                NButton.setBackground(Color.WHITE); // Set initial background color to white
             }
-
-            NButton.setBackground(Color.WHITE); // Set initial background color to white
             jFrame.getContentPane().add(NButton);
 
             JButton GButton = new JButton(String.valueOf(GSetNums[i]));
