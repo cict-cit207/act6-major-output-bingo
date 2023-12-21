@@ -213,7 +213,7 @@ public class Main {
         char drawLetter;
         int drawNumber;
         int rounds = 35;
-        int WAIT_TIME = 0; // CHANGE ME TO 0 FOR INSTANT RESULTS
+        int WAIT_TIME = 1; // CHANGE ME TO 0 FOR INSTANT RESULTS
         int repeat;
         int cardsNum;
 

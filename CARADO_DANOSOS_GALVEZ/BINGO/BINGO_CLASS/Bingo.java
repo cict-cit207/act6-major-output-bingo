@@ -21,6 +21,7 @@ public class Bingo {
     }
 
     // Boolean arrays representing the status of numbers, true if found, else false
+
     private boolean[] BBool = new boolean[5];
     private boolean[] IBool = new boolean[5];
     private boolean[] NBool = new boolean[5];
