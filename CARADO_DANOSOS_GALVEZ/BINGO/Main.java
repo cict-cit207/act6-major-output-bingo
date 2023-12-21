@@ -296,12 +296,14 @@ public class Main {
                     cards[i].initGUI(i + 1);
                     cards[i].setVisibility(true);
 
-                    BNums.clear();
-                    INums.clear();
-                    NNums.clear();
-                    GNums.clear();
-                    ONums.clear();
                 }
+
+                BNums.clear();
+                INums.clear();
+                NNums.clear();
+                GNums.clear();
+                ONums.clear();
+
                 continue;
             } else {
                 // closing scanners to release resources
