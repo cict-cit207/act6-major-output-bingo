@@ -3,7 +3,10 @@
 
 ## Bingo Game Flow:
 ### Dependencies
-![Dependencies](Images/Dependencies.png "Code Snippet 1")
+![Dependencies](Images/Dependencies.png "Dependencies")
+
+### Installation
+> `git clone https://github.com/hydraadra112/act6-major-output-bingo.git`
 
 ### Main Program:
 * The user has the option to input (No. of Cards) how many Bingo cards to use, with maximum of 5 cards only. The input is taken by using a scanner.
@@ -15,7 +18,7 @@
 ![Snippet1](Images/Snippet_1.png "Code Snippet 1")
 
 
-* Iterate for 35 draws, with each draw will be saved in their respective lists of B, I, N, G, O, and update the current status of the current iteration of Bingo Card.
+* Iterate for 35 draws, with each draw will be saved in their respective lists of `B, I, N, G, O,` and update the current status of the current iteration of Bingo Card.
 
 **Cards Update & Saving of Drawn Numbers**
 
