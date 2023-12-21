@@ -1,25 +1,36 @@
+package BINGO_CLASS;
+
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 
 public class Bingo {
 
+    // Arrays to store the numbers inside the bingo card
     private int[] BSetNums = new int[5];
     private int[] ISetNums = new int[5];
     private int[] NSetNums = new int[5];
     private int[] GSetNums = new int[5];
     private int[] OSetNums = new int[5];
 
+    // getter for all existing
+    public int[][] getAllSetNums() {
+        int[][] allSetNums = { BSetNums, ISetNums, NSetNums, GSetNums, OSetNums };
+        return allSetNums;
+    }
+
+    // Boolean arrays representing the status of numbers, true if found, else false
     private boolean[] BBool = new boolean[5];
     private boolean[] IBool = new boolean[5];
     private boolean[] NBool = new boolean[5];
     private boolean[] GBool = new boolean[5];
     private boolean[] OBool = new boolean[5];
 
+    // JFrame for GUI
     private JFrame jFrame = new JFrame("BINGO Card");
 
+    // Helper method to check if all elements in an array are true
     private static boolean checkIfAllTrue(boolean[] array) {
         for (boolean bool : array) {
             if (!bool) {
@@ -29,16 +40,21 @@ public class Bingo {
         return true;
     }
 
+    // Method to check if the bingo card has a winning combination
     public boolean checkStatus() {
+
+        // taking all the columns and assessing each if are all true
         boolean[] columns = { checkIfAllTrue(BBool), checkIfAllTrue(IBool), checkIfAllTrue(NBool),
                 checkIfAllTrue(GBool), checkIfAllTrue(OBool) };
 
+        // Check for a win in any column
         for (boolean col : columns) {
             if (col) {
                 return true;
             }
         }
 
+        // Check for a win in diagonals
         boolean[] mainDiagonal = { BBool[0], IBool[1], NBool[2], GBool[3], OBool[4] };
         boolean[] reverseDiagonal = { BBool[4], IBool[3], NBool[2], GBool[1], OBool[0] };
 
@@ -46,6 +62,7 @@ public class Bingo {
             return true;
         }
 
+        // Check for a win in rows
         for (int i = 0; i < 5; i++) {
             boolean[] rows = new boolean[5];
 
@@ -69,10 +86,13 @@ public class Bingo {
         return false;
     }
 
+    // Method to update the card status based on the drawn number
     public void update_card(char letter, int number) {
         boolean newVal = true;
-        for (int i = 0; i < 5; ++i) {
 
+        // for loop to iterate each row, and will do only a comparison on a specific
+        // letter
+        for (int i = 0; i < 5; ++i) {
             switch (letter) {
                 case 'B':
                     if (number == BSetNums[i]) {
@@ -104,20 +124,7 @@ public class Bingo {
         }
     }
 
-    public void reset_cards() {
-        Arrays.fill(BSetNums, 0);
-        Arrays.fill(ISetNums, 0);
-        Arrays.fill(NSetNums, 0);
-        Arrays.fill(GSetNums, 0);
-        Arrays.fill(OSetNums, 0);
-
-        Arrays.fill(BBool, false);
-        Arrays.fill(IBool, false);
-        Arrays.fill(NBool, false);
-        Arrays.fill(GBool, false);
-        Arrays.fill(OBool, false);
-    }
-
+    // Method to fill the card with random numbers
     public void fill_cards() {
         Random random = new Random();
         HashSet<Integer> usedNumbers = new HashSet<>();
@@ -131,6 +138,7 @@ public class Bingo {
         }
     }
 
+    // Helper method to get a random unique number
     private int getRandomUniqueNumber(HashSet<Integer> usedNumbers, Random random, int start, int stop) {
         int randomNumber;
         do {
@@ -141,12 +149,14 @@ public class Bingo {
         return randomNumber;
     }
 
+    // Method to set the visibility of the JFrame
     public void setVisibility(boolean v) {
         jFrame.setVisible(v);
     }
 
+    // Method to initialize the GUI
     public void initGUI(int cardnum) {
-
+        // Initializing the necessary GUI Components
         Dimension dimension = new Dimension(350, 500);
         GridLayout gridLayout = new GridLayout(0, 5);
         jFrame.setTitle(("Bingo Card: #" + cardnum));
@@ -155,12 +165,15 @@ public class Bingo {
         jFrame.setLayout(gridLayout);
         jFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        // Add buttons for each letter
         jFrame.getContentPane().add(new JButton("B"));
         jFrame.getContentPane().add(new JButton("I"));
         jFrame.getContentPane().add(new JButton("N"));
         jFrame.getContentPane().add(new JButton("G"));
         jFrame.getContentPane().add(new JButton("O"));
 
+        // Add buttons for each number in the corresponding letter's set
+        // And making each button turn to yellow once clicked
         for (int i = 0; i < 5; i++) {
             JButton BButton = new JButton(String.valueOf(BSetNums[i]));
             BButton.addActionListener(e -> {
@@ -178,6 +191,7 @@ public class Bingo {
             IButton.setBackground(Color.WHITE); // Set initial background color to white
             jFrame.getContentPane().add(IButton);
 
+            // Free Button in the middle of the Card
             JButton NButton; // Declare NButton outside the if-else block
 
             if (i == 2) {
