@@ -1,5 +1,3 @@
-# Act 6 Major Output
-Bingo App README
 This README provides instructions on how to run the Bingo App. The code is organized into three classes: BingoApp, StartFrame, and CardFrame, along with a utility class GenerateNumbers.
 
 Prerequisites
@@ -40,3 +38,7 @@ Make sure to replace the image paths in the code with the correct paths on your 
 The app uses Nimbus Look and Feel, so the UI may have a different appearance depending on your system.
 
 Enjoy playing Bingo!
+
+UML Diagram:
+![UML_Diagram](https://github.com/Tzetha/act6-major-output-bingo/assets/116656473/3caa2af3-3c20-4b5e-87bb-a81264d0b4d8)
+
