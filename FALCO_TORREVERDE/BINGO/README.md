@@ -20,4 +20,4 @@
    <br>
 
 ### _UML Diagram_
-![UML Diagram](FALCO_TORREVERDE/BINGO/BingoGame.png)  
+![UML Diagram](https://github.com/chariz1101/act6-major-output-bingo/blob/main/FALCO_TORREVERDE/BINGO/img/BingoGame.png)  
