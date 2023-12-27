@@ -20,4 +20,4 @@
    <br>
 
 ### _UML Diagram_
-[UML Diagram](https://www.figma.com/file/ouVScPsJas1UXQOpyJBwkp/BingoGame?type=whiteboard)  
+![UML Diagram](FALCO_TORREVERDE/BINGO/BingoGame.png)  
