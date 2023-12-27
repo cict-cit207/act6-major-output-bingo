@@ -21,8 +21,3 @@
 
 ### _UML Diagram_
 [UML Diagram](https://www.figma.com/file/ouVScPsJas1UXQOpyJBwkp/BingoGame?type=whiteboard)  
-
-
-
-
->>>>>>> ab7cea3e06bc0218085e6d32bea3b8a5bb4016ec
