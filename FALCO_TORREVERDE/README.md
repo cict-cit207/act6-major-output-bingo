@@ -7,7 +7,8 @@
    - To start playing the game, open and run the _BingoCard.java_ application file.
    <br>
 2. **Choosing the Card Type**
-   - When prompted, the user can select either a randomized card or a customized BINGO card.<br>
+   - When prompted, the user can select either a randomized card or a customized BINGO card.
+   <br>
 3. **Rolling the Dice and Marking Numbers**
    - The user will have the option to roll the Bingo dice and click the corresponding number button to mark it on their card.
    <br>
@@ -19,7 +20,7 @@
    <br>
 
 ### _UML Diagram_
-[UML Diagram]([URL](https://www.figma.com/file/ouVScPsJas1UXQOpyJBwkp/BingoGame?type=whiteboard)https://www.figma.com/file/ouVScPsJas1UXQOpyJBwkp/BingoGame?type=whiteboard)  
+[UML Diagram](https://www.figma.com/file/ouVScPsJas1UXQOpyJBwkp/BingoGame?type=whiteboard)  
 
 
 
