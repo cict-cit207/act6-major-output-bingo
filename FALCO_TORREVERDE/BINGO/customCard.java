@@ -477,7 +477,7 @@ public class customCard extends javax.swing.JPanel {
     }//GEN-LAST:event_backActionPerformed
 
     private void generateNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateNewActionPerformed
-        JFrame frame = new JFrame("Main Menu");
+        JFrame frame = new JFrame("Custom Card");
         generatedCard genCard = new generatedCard();
         
         genCard.B1.setText(inputB1.getText());
