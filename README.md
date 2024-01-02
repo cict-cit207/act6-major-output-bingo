@@ -1,42 +1,29 @@
 # Act 6 Major Output
-Bingo App README
-This README provides instructions on how to run the Bingo App. The code is organized into three classes: BingoApp, StartFrame, and CardFrame, along with a utility class GenerateNumbers.
+> As discussed last meeting. Here are the details to our final output.
+## BINGO!
 
-Prerequisites
-Java Development Kit (JDK) installed on your machine.
-Ensure that the required images are available at the specified paths or update the paths accordingly.
+* Have a group (max 3 members) and create a BINGO app using Java Swing.
+* The BINGO app can automatically change its number content based on the following rules:
 
-Running the App
-1. Compile the Code:
-Open a terminal and navigate to the directory containing the Java files.
-Compile the code using the command: 
-CODE: javac BingoApp.java
+   - B features numbers 1 – 15
+   - I features numbers 16 – 30
+   - N features numbers 31 – 45
+   - G features numbers 46 – 60
+   - O features numbers 61 – 75
+   - No repeating numbers.
+   - Sequences are randomly generated.
+* The BINGO app will be mainly composed of **JButtons** containing the numbers which gets disabled when clicked/pressed.
+* The BINGO app must be accompanied by a **UML class diagram** and must mirror all the components in the app.
+* The group can add additional features or functionalities to the app for extra points.
+* Use of Stack-overflow and code sharing is highly recommended provided that the team give source credits to the code snippets.
+* Submit your output via PR and follow the example directory in this repository (name format and structure).
+* Excess points will be transferred to class participation.
 
-2. Run the Application:
-Run the compiled program with the following command: 
-CODE: java BingoApp
-This will launch the Bingo App, and the main menu will appear.
-
-3. Main Menu:
-The main menu allows you to choose between two options:
-Generate Random Card: Click the "Generate Random Card" button to generate a random bingo card.
-Create Own Card:
-Click the "Create Own Card" button to create a custom bingo card.
-
-4. Generate Random Card:
-Upon clicking "Generate Random Card," a new window will open with a randomly generated bingo card. The numbers on the card can be marked by clicking on them.
-
-5. Create Own Card:
-Clicking "Create Own Card" will open a window where you can input numbers for each bingo column (B, I, N, G, O). Follow the instructions and click "Generate Card" to create a custom bingo card.
-
-6. Playing the Game:
-In the bingo card window, you can click on the numbers to mark them. The "Roll" button generates a random letter (B, I, N, G, O) and number combination.
-
-7. Resetting or Going Back:
-The "Generate New Card" button in the bingo card window resets the card, while the "Back" button in both windows returns to the main menu.
-
-NOTE
-Make sure to replace the image paths in the code with the correct paths on your system if they differ.
-The app uses Nimbus Look and Feel, so the UI may have a different appearance depending on your system.
-
-Enjoy playing Bingo!
+---
+### Rubrics (100 Points)
+|Criteria|Description|Points|
+|---|---|---|
+|Functionality|All required UI for the BINGO app components and features are present and functional. Plus points for extra features.|20(+)|
+|Code Quality|The code was well structured. Proper separation of functionalities applied. Effective use of class and methods.|30|
+|Documentation and Comments|Added instructions on how to run the BINGO app. Sufficient comments applied to complex sections of the code. Credits given to code snippets|20|
+|UML Class Diagram|Diagram correctly reflects the BINGO app's source code.|30|
