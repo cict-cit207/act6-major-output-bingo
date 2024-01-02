@@ -3,6 +3,7 @@
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class CardNumbers {
 
@@ -12,7 +13,8 @@ public class CardNumbers {
         ArrayList newArray = new ArrayList<>();
         for (int i = 0; i < 5; i++){
             Random rand = new Random();
-            int element = rand.nextInt(0, arr.size() );
+            //int element = rand.nextInt(0, arr.size() );
+            int element = ThreadLocalRandom.current().nextInt(0, arr.size());
             newArray.add(arr.get(element));
             arr.remove(arr.get(element));
         }

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OOPFinal">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/OOPFinal.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
